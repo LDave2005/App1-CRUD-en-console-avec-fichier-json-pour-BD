@@ -1,0 +1,112 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "nom": "dave",
+      "email": "dave@dev.com",
+      "motDePasseHash": "$2a$11$LMbTfr6fp79zZ3pQYGugSeWbimNMw4eTfHULbR0LMNb73fKrdzIDe",
+      "statut": "actif",
+      "role": "admin",
+      "createdAt": "2025-11-25T10:15:06.3995239Z"
+    },
+    {
+      "id": 2,
+      "nom": "roger",
+      "email": "roger@dev.com",
+      "motDePasseHash": "$2a$11$0GUOGH19VQsjsK3KG2YmFeXy8HfIdCoWwBFebN2T3NkBSbbOk10hW",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-11-25T15:05:06.8054935Z"
+    },
+    {
+      "id": 3,
+      "nom": "lamine",
+      "email": "lamine@yamal.fcb",
+      "motDePasseHash": "$2a$11$qJMw1w.bYb3IpktgWEtpiuL882y8QeRjfYynjfmNIUoNeZi5L5nvW",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-11-25T15:08:13.8158515Z"
+    },
+    {
+      "id": 4,
+      "nom": "Wick",
+      "email": "john@wick.com",
+      "motDePasseHash": "$2a$11$0nC34AwBE.aCJMiwPPXCcuTlW807TQnSYF.rLxex7Dif1os1nnY9y",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-11-25T15:54:08.1836747Z"
+    },
+    {
+      "id": 5,
+      "nom": "joe",
+      "email": "joe@dev.com",
+      "motDePasseHash": "$2a$11$4d3H45IjEvJGr4BhrDkZ/uHs7UlmI5NqUT2fbq0PaL5xb7nw.lqnK",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-11-25T15:56:24.3393828Z"
+    },
+    {
+      "id": 6,
+      "nom": "Shelby Thomas",
+      "email": "thomas@peaky.blinders",
+      "motDePasseHash": "$2a$11$Jb/x0MxYNs0F6ovc7KDTcO0aL24iWn8PRUuTtCjMu4oa5eoaZjkNS",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-11-26T14:40:31.5609921Z"
+    },
+    {
+      "id": 7,
+      "nom": "Kim",
+      "email": "kim@jong.com",
+      "motDePasseHash": "$2a$11$q4ekf/ZVS059DeO.Jcc1Iu0mgvtS8TzHPuQE6Fr.EE.MIsOyJNdVm",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-11-26T15:51:19.5227139Z"
+    },
+    {
+      "id": 8,
+      "nom": "Baki",
+      "email": "baki@hanma.com",
+      "motDePasseHash": "$2a$11$NfzrvQ4veXVUUYVu36rFYuAkNa0wXlTYwoA2GuO4hKekBvT9trnUe",
+      "statut": "pending",
+      "role": "guest",
+      "createdAt": "2025-11-27T08:33:45.1336272Z"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "nom": "Toriyama",
+      "numeroTel": 690909090
+    },
+    {
+      "id": 2,
+      "nom": "Philippe",
+      "numeroTel": 689898989
+    },
+    {
+      "id": 3,
+      "nom": "David Guetta",
+      "numeroTel": 677777777
+    },
+    {
+      "id": 4,
+      "nom": "Salomon",
+      "numeroTel": 683838383
+    },
+    {
+      "id": 5,
+      "nom": "Franck",
+      "numeroTel": 657575757
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "nom": "PC Azuz Rog",
+      "description": "Laptop Gaming",
+      "prix": 300000.0,
+      "stock": 6
+    }
+  ]
+}
