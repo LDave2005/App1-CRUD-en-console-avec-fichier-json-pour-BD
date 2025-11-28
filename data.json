@@ -68,8 +68,8 @@
       "nom": "Baki",
       "email": "baki@hanma.com",
       "motDePasseHash": "$2a$11$NfzrvQ4veXVUUYVu36rFYuAkNa0wXlTYwoA2GuO4hKekBvT9trnUe",
-      "statut": "pending",
-      "role": "guest",
+      "statut": "actif",
+      "role": "user",
       "createdAt": "2025-11-27T08:33:45.1336272Z"
     }
   ],
