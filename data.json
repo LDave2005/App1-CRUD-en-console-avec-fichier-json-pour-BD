@@ -4,7 +4,7 @@
       "id": 1,
       "nom": "dave",
       "email": "dave@dev.com",
-      "motDePasseHash": "$2a$11$LMbTfr6fp79zZ3pQYGugSeWbimNMw4eTfHULbR0LMNb73fKrdzIDe",
+      "motDePasseHash": "$2a$11$2GW/DMVwaH0Lv5/82XeKZOOQTY47Qa3KY/sA0U7kfsYSqd.UQTaj.",
       "statut": "actif",
       "role": "admin",
       "createdAt": "2025-11-25T10:15:06.3995239Z"
@@ -14,7 +14,7 @@
       "nom": "roger",
       "email": "roger@dev.com",
       "motDePasseHash": "$2a$11$0GUOGH19VQsjsK3KG2YmFeXy8HfIdCoWwBFebN2T3NkBSbbOk10hW",
-      "statut": "actif",
+      "statut": "inactif",
       "role": "user",
       "createdAt": "2025-11-25T15:05:06.8054935Z"
     },
@@ -68,7 +68,7 @@
       "nom": "Baki",
       "email": "baki@hanma.com",
       "motDePasseHash": "$2a$11$NfzrvQ4veXVUUYVu36rFYuAkNa0wXlTYwoA2GuO4hKekBvT9trnUe",
-      "statut": "actif",
+      "statut": "inactif",
       "role": "user",
       "createdAt": "2025-11-27T08:33:45.1336272Z"
     }
@@ -98,6 +98,11 @@
       "id": 5,
       "nom": "Franck",
       "numeroTel": 657575757
+    },
+    {
+      "id": 9,
+      "nom": "Robert",
+      "numeroTel": 691919191
     }
   ],
   "products": [
@@ -107,6 +112,13 @@
       "description": "Laptop Gaming",
       "prix": 300000.0,
       "stock": 6
+    },
+    {
+      "id": 2,
+      "nom": "ASUS ROG Swift OLED",
+      "description": "Écran PC 31.5\", QD-OLED, 16:9, 3840 x 2160 (4K UHD)",
+      "prix": 120000.0,
+      "stock": 3
     }
   ]
 }

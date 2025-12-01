@@ -1,10 +1,6 @@
 ﻿using App1.DAL;
 using App1.Modeles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace App1.Services
 {

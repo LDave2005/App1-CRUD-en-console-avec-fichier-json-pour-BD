@@ -1,14 +1,6 @@
-﻿
-using App1;
-using App1.DAL;
+﻿using App1.DAL;
 using App1.Modeles;
-//using App1e;
-using Mysqlx.Session;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace App1.View
 {
@@ -90,7 +82,8 @@ namespace App1.View
             else
             {
                 Console.WriteLine("3) Réinitialiser mon mot de passe");
-                Console.WriteLine("4) Déconnexion");
+                Console.WriteLine("4) Gérer les produits");
+                Console.WriteLine("5) Déconnexion");
             }
 
             Console.Write("Choix: ");

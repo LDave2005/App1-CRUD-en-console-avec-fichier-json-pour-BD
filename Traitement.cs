@@ -1,17 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using App1.Modeles;
+﻿using App1.Modeles;
 
 namespace App1
 {
     public class Traitement
     {
-        public Traitement()
+        public enum PauseAction { Continuer, Reset }
+        public Traitement() { }
+
+        public PauseAction AttendreEntreeOuReset(string message = "Appuyez sur Entrée pour continuer ou ctrl+R pour revenir au menu...")
         {
+            Console.WriteLine(message);
+            while (true)
+            {
+                var key = Console.ReadKey();
+                if ((key.Modifiers & ConsoleModifiers.Control) != 0 && key.Key == ConsoleKey.R) return PauseAction.Reset;
+                if (key.Key == ConsoleKey.Enter) return PauseAction.Continuer;
+                //Ignorer les autres touches
+            }
         }
+
         public static int CalculID(Donnees donnees)
         {
             int max = 0;
@@ -23,9 +30,22 @@ namespace App1
             return nextId;
         }
 
+        public static int CalculIDProduct(Donnees donnees)
+        {
+            int max = 0;
+            foreach (var p in donnees.products)
+            {
+                if (p.id > max) max = p.id;
+            }
+            int nextId = max + 1;
+            return nextId;
+        }
+
+
         public static bool RechercherEmail(string? dEmail, string? cEmail)
         {
-            if(!string.IsNullOrEmpty(dEmail) && dEmail.Equals(cEmail, StringComparison.OrdinalIgnoreCase)){
+            if (!string.IsNullOrEmpty(dEmail) && dEmail.Equals(cEmail, StringComparison.OrdinalIgnoreCase))
+            {
                 return true;
             }
             return false;
@@ -36,7 +56,7 @@ namespace App1
             User? cible = null;
             foreach (var u in donnees.users)
             {
-                if (RechercherEmail(u.email,cEmail))
+                if (RechercherEmail(u.email, cEmail))
                 {
                     cible = u;
                     break;

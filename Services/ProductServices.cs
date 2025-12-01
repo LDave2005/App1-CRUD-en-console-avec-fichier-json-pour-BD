@@ -1,10 +1,5 @@
 ﻿using App1.DAL;
 using App1.Modeles;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App1.Services
 {
@@ -33,7 +28,7 @@ namespace App1.Services
                 if (pr.id > max) max = pr.id;
             }
             p.id = max + 1;*/
-            p.id = Traitement.CalculID(donnees);
+            p.id = Traitement.CalculIDProduct(donnees);
             donnees.products.Add(p);
             DataStore.Ecrire(donnees);
         }
