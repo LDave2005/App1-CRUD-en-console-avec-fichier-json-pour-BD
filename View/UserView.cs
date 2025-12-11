@@ -1,5 +1,6 @@
 ﻿using App1.DAL;
 using App1.Modeles;
+using Org.BouncyCastle.Crypto;
 
 
 namespace App1.View
@@ -15,6 +16,7 @@ namespace App1.View
 
         public void AfficherUtilisateursTable()
         {
+            Traitement op = new Traitement();
             var donnees = DataStore.Lire();
             var users = (donnees == null || donnees.users == null) ? new List<Modeles.User>() : donnees.users;
 
@@ -26,18 +28,19 @@ namespace App1.View
             int dateW = 19; // "yyyy-MM-dd HH:mm:ss"
             int roleW = 4;
 
+            int maxIdWidth = 5;
+            int maxNomWidth = 20;
+            int maxEmailWidth = 30;
+            int maxStatutWidth = 15;
+            int maxRoleWidth = 10;
+
             foreach (var u in users)
             {
-                var idLen = u.id.ToString().Length;
-                if (idLen > idW) idW = idLen;
-                var nlen = (u.nom ?? "").Length;
-                if (nlen > nomW) nomW = nlen;
-                var elen = (u.email ?? "").Length;
-                if (elen > emailW) emailW = elen;
-                var slen = (u.statut ?? "").Length;
-                if (slen > statutW) statutW = slen;
-                var roleLen = (u.role ?? "").Length;
-                if (roleLen > roleW) roleW = roleLen;
+                idW = Math.Min(Math.Max(idW, u.id.ToString().Length), maxIdWidth);
+                nomW = Math.Min(Math.Max(nomW, (u.nom ?? "").Length), maxNomWidth);
+                emailW = Math.Min(Math.Max(emailW, (u.email ?? "").Length), maxEmailWidth);
+                statutW = Math.Min(Math.Max(statutW, (u.statut ?? "").Length), maxStatutWidth);
+                roleW = Math.Min(Math.Max(roleW, (u.role ?? "").Length), maxRoleWidth);
             }
 
             string sep = "+" + new string('-', idW + 2) + "+" + new string('-', nomW + 2) + "+" +
@@ -50,17 +53,34 @@ namespace App1.View
 
             foreach (var u in users)
             {
-                string idS = u.id.ToString().PadRight(idW);
-                string nom = (u.nom ?? "").PadRight(nomW);
-                string email = (u.email ?? "").PadRight(emailW);
-                string statut = (u.statut ?? "").PadRight(statutW);
-                string date = (u.createdAt == default ? "" : u.createdAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss")).PadRight(dateW);
-                string role = (u.role ?? "").PadRight(roleW);
+                // On coupe chaque cellule selon la largeur de sa colonne
+                var idLines = op.Wrap(u.id.ToString(), idW);
+                var nomLines = op.Wrap(u.nom ?? "", nomW);
+                var emailLines = op.Wrap(u.email ?? "", emailW);
+                var statutLines = op.Wrap(u.statut ?? "", statutW);
+                var dateLines = op.Wrap((u.createdAt == default ? "" : u.createdAt.ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss")), dateW);
+                var roleLines = op.Wrap(u.role ?? "", roleW);
 
-                Console.WriteLine($"| {idS} | {nom} | {email} | {statut} | {date} | {role} |");
+                // Lignes maximales pour cet enregistrement
+                int max = new List<int> {
+                    idLines.Count, nomLines.Count, emailLines.Count,
+                    statutLines.Count, dateLines.Count, roleLines.Count
+                }.Max();
+
+                //Affichage des lignes
+                for(int i = 0; i < max; i++)
+                {
+                    string id = i < idLines.Count ? idLines[i].PadRight(idW) : new string(' ', idW);
+                    string nom = i < nomLines.Count ? nomLines[i].PadRight(nomW) : new string(' ', nomW);
+                    string email = i < emailLines.Count ? emailLines[i].PadRight(emailW) : new string(' ', emailW);
+                    string statut = i < statutLines.Count ? statutLines[i].PadRight(statutW) : new string(' ', statutW);
+                    string date = i < dateLines.Count ? dateLines[i].PadRight(dateW) : new string(' ', dateW);
+                    string role = i < roleLines.Count ? roleLines[i].PadRight(roleW) : new string(' ', roleW);
+
+                    Console.WriteLine($"| {id} | {nom} | {email} | {statut} | {date} | {role} |");
+                }
+                Console.WriteLine(sep);
             }
-
-            Console.WriteLine(sep);
         }
 
         public void MenuUser(User user)

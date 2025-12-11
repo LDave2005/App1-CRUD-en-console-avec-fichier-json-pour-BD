@@ -36,7 +36,7 @@ namespace App1.Services
                 if (c.id > max) max = c.id;
             }
             client.id = max + 1;*/
-            client.id = Traitement.CalculID(donnees);
+            client.id = Traitement.CalculIDClient(donnees);
             donnees.clients.Add(client);
             DataStore.Ecrire(donnees);
         }

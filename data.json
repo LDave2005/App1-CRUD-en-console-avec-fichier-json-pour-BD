@@ -227,6 +227,13 @@
       "description": "Écran PC 31.5\", QD-OLED, 16:9, 3840 x 2160 (4K UHD)",
       "prix": 120000.0,
       "stock": 3
+    },
+    {
+      "id": 3,
+      "nom": "AOC Q27G4ZR",
+      "description": "Écran PC 27\", Fast IPS, 16:9, 2560 x 1440 (WQHD), 0,3 ms, 240 Hz, HDR, HDMI/DisplayPort",
+      "prix": 115000.0,
+      "stock": 5
     }
   ]
 }

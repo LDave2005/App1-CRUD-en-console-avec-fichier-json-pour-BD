@@ -114,7 +114,7 @@ namespace App1.Services
                     if (u.id > max) max = u.id;
                 }
                 nextId = max + 1;*/
-                nextId = Traitement.CalculID(donnees);
+                nextId = Traitement.CalculIDUser(donnees);
             }
 
             //Hacher le mot de passe 

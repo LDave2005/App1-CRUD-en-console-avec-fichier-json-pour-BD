@@ -1,6 +1,7 @@
 ﻿using App1.DAL;
-using App1.Services;
 using App1.Modeles;
+using App1.Services;
+using Org.BouncyCastle.Crypto;
 
 namespace App1.View
 {
@@ -15,6 +16,7 @@ namespace App1.View
 
         public void AfficherProduitsTable()
         {
+            Traitement op = new Traitement();
             ProductServices product = new ProductServices();
             var produits = product.LireProduits();
 
@@ -24,13 +26,20 @@ namespace App1.View
             int prixW = 8;
             int stockW = 5;
 
+            //tailles maximales
+            int maxId = 5;
+            int maxNom = 20;
+            int maxDesc = 30;
+            int maxPrix = 10;
+            int maxStock = 5;
+
             foreach (var p in produits)
             {
-                if (p.id.ToString().Length > idW) idW = p.id.ToString().Length;
-                if ((p.nom ?? "").Length > nomW) nomW = (p.nom ?? "").Length;
-                if ((p.description ?? "").Length > descW) descW = (p.description ?? "").Length;
-                if (p.prix.ToString("F2").Length > prixW) prixW = p.prix.ToString("F2").Length;
-                if (p.stock.ToString().Length > stockW) stockW = p.stock.ToString().Length;
+                idW = Math.Min(Math.Max(p.id.ToString().Length, idW), maxId);
+                nomW = Math.Min(Math.Max((p.nom ?? "").ToString().Length, nomW), maxNom);
+                descW = Math.Min(Math.Max((p.description ?? "").ToString().Length, descW), maxDesc);
+                prixW = Math.Min(Math.Max(p.prix.ToString().Length, prixW), maxPrix);
+                stockW = Math.Min(Math.Max(p.stock.ToString().Length, stockW), maxStock);
             }
 
             string sep = "+" + new string('-', idW + 2) + "+" + new string('-', nomW + 2) + "+" +
@@ -43,15 +52,31 @@ namespace App1.View
 
             foreach (var p in produits)
             {
-                string idS = p.id.ToString().PadRight(idW);
-                string nom = (p.nom ?? "").PadRight(nomW);
-                string desc = (p.description ?? "").PadRight(descW);
-                string prix = p.prix.ToString("F2").PadRight(prixW);
-                string stock = p.stock.ToString().PadRight(stockW);
+                var idLines = op.Wrap(p.id.ToString(),idW);
+                var nomLines = op.Wrap((p.nom ?? "").ToString(), nomW);
+                var descLines = op.Wrap((p.description ?? "").ToString(), descW);
+                var prixLines = op.Wrap(p.prix.ToString(), prixW);
+                var stockLines = op.Wrap((p.stock).ToString(), stockW);
 
-                Console.WriteLine($"| {idS} | {nom} | {desc} | {prix} | {stock} |");
+                //
+                int max = new List<int>
+                {
+                    idLines.Count, nomLines.Count,descLines.Count, prixLines.Count, stockLines.Count
+                }.Max();
+
+                for(int i = 0; i < max; i++)
+                {
+                    string id = i < idLines.Count ? idLines[i].PadRight(idW) : new string(' ', idW);
+                    string nom = i < nomLines.Count ? nomLines[i].PadRight(nomW) : new string(' ', nomW);
+                    string desc = i < descLines.Count ? descLines[i].PadRight(descW) : new string(' ', descW);
+                    string prix = i < prixLines.Count ? prixLines[i].PadRight(prixW) : new string(' ', prixW);
+                    string stock = i < stockLines.Count ? stockLines[i].PadRight(stockW) : new string(' ', stockW);
+
+                    Console.WriteLine($"| {id} | {nom} | {desc} | {prix} | {stock} |");
+                }
+                Console.WriteLine(sep);
             }
-            Console.WriteLine(sep);
+            
         }
 
         public void MenuProduct()

@@ -19,10 +19,10 @@ namespace App1
             }
         }
 
-        public static int CalculID(Donnees donnees)
+        public static int CalculIDUser(Donnees donnees)
         {
             int max = 0;
-            foreach (var u in donnees.clients)
+            foreach (var u in donnees.users)
             {
                 if (u.id > max) max = u.id;
             }
@@ -40,7 +40,16 @@ namespace App1
             int nextId = max + 1;
             return nextId;
         }
-
+        public static int CalculIDClient(Donnees donnees)
+        {
+            int max = 0;
+            foreach (var u in donnees.clients)
+            {
+                if (u.id > max) max = u.id;
+            }
+            int nextId = max + 1;
+            return nextId;
+        }
 
         public static bool RechercherEmail(string? dEmail, string? cEmail)
         {
@@ -153,6 +162,22 @@ namespace App1
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(msg);
             Console.ForegroundColor = ConsoleColor.White;
+        }
+
+        public List<string> Wrap(string text, int t)
+        {
+            var lines = new List<string>();
+            if (string.IsNullOrEmpty(text))
+            {
+                lines.Add("");
+                return lines;
+            }
+            for(int i =0 ; i < text.Length; i += t)
+            {
+                int len = Math.Min(t, text.Length - i);
+                lines.Add(text.Substring(i, len));
+            }
+            return lines;
         }
 
     }
