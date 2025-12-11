@@ -22,7 +22,7 @@
       "id": 3,
       "nom": "lamine",
       "email": "lamine@yamal.fcb",
-      "motDePasseHash": "$2a$11$qJMw1w.bYb3IpktgWEtpiuL882y8QeRjfYynjfmNIUoNeZi5L5nvW",
+      "motDePasseHash": "$2a$11$Z2yE2VvOfN2sow5S9HqcseGAPs1FS/8CS/AHrmSazH1Wg1USO5ml6",
       "statut": "actif",
       "role": "user",
       "createdAt": "2025-11-25T15:08:13.8158515Z"
@@ -40,7 +40,7 @@
       "id": 5,
       "nom": "joe",
       "email": "joe@dev.com",
-      "motDePasseHash": "$2a$11$4d3H45IjEvJGr4BhrDkZ/uHs7UlmI5NqUT2fbq0PaL5xb7nw.lqnK",
+      "motDePasseHash": "$2a$11$eaUGfLOGOyIBD9CbhuSgWO5ABAWYpYJUJ7Wva7OSNeL2ynkfXwMWO",
       "statut": "actif",
       "role": "user",
       "createdAt": "2025-11-25T15:56:24.3393828Z"
@@ -71,6 +71,114 @@
       "statut": "inactif",
       "role": "user",
       "createdAt": "2025-11-27T08:33:45.1336272Z"
+    },
+    {
+      "id": 9,
+      "nom": "jacky",
+      "email": "jacky@dev.com",
+      "motDePasseHash": "$2a$11$YzA6KLy9CJy3n.ZDejeFy.WpY4Na4a0HdZ9BOWYzo3ezQouT18pLO",
+      "statut": "pending",
+      "role": "guest",
+      "createdAt": "2025-12-03T07:39:29.4439567Z"
+    },
+    {
+      "id": 10,
+      "nom": "Jet Lee",
+      "email": "jet@dev.com",
+      "motDePasseHash": "$2a$11$FjlLtcba9IxjPuVE3VxInOgUKoUvuOovHLxO4/emIqB4Lo0VRmk3e",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-12-03T08:17:23.8404001Z"
+    },
+    {
+      "id": 11,
+      "nom": "Ichigo",
+      "email": "Ichigo@dev.com",
+      "motDePasseHash": "$2a$11$efPjm4IGyeXrGaI7GCVALe.W02GLi5QxnI2fOiPM5wLaM1aidKOZi",
+      "statut": "pending",
+      "role": "guest",
+      "createdAt": "2025-12-04T10:05:14.6992663Z"
+    },
+    {
+      "id": 12,
+      "nom": "Byakuya",
+      "email": "byakuya@dev.com",
+      "motDePasseHash": "$2a$11$cjYRyhXhGay.A1PWNL5tdesE7YdaVrmobe4vvnrJUJEquB4jqp2w6",
+      "statut": "inactif",
+      "role": "user",
+      "createdAt": "2025-12-04T10:07:20.6003186Z"
+    },
+    {
+      "id": 13,
+      "nom": "Yamamoto",
+      "email": "yamamoto@dev.com",
+      "motDePasseHash": "$2a$11$svJnQ0kBs.9FxCcOqFwg/uv1.17.0vjijxjUmDn7Sq3Ec5GsO6OOO",
+      "statut": "pending",
+      "role": "guest",
+      "createdAt": "2025-12-04T10:48:21.9152888Z"
+    },
+    {
+      "id": 14,
+      "nom": "Renji",
+      "email": "renji@dev.com",
+      "motDePasseHash": "$2a$11$h5Pz7OHtwwHU4db7bEcqG.Td/EVRjRz1K.gzFceC9z26J5yN1Ye9u",
+      "statut": "pending",
+      "role": "guest",
+      "createdAt": "2025-12-05T10:41:27.7118464Z"
+    },
+    {
+      "id": 15,
+      "nom": "Adam",
+      "email": "adam@dev.com",
+      "motDePasseHash": "$2a$11$8akUy5wK10TMO35f46GTgObg6fiMGwufugkML.nOL/VVhrA8cqRdm",
+      "statut": "pending",
+      "role": "guest",
+      "createdAt": "2025-12-05T10:44:43.7733176Z"
+    },
+    {
+      "id": 16,
+      "nom": "Levi",
+      "email": "levi@dev.com",
+      "motDePasseHash": "$2a$11$qtHu45ZhXlNN9fW15gbkXOjTL7Ybpsw9TfxklOtQeuzAJK0Ns.DOu",
+      "statut": "actif",
+      "role": "admin",
+      "createdAt": "2025-12-05T11:19:32.5391474Z"
+    },
+    {
+      "id": 17,
+      "nom": "Eve",
+      "email": "eve@dev.com",
+      "motDePasseHash": "$2a$11$7DB3e72ESJQwIdIyQjFvzeHEnz30QBlBwlC56y6v4PyMkT/XAk5je",
+      "statut": "pending",
+      "role": "guest",
+      "createdAt": "2025-12-08T09:10:29.303465Z"
+    },
+    {
+      "id": 18,
+      "nom": "Pedri",
+      "email": "pedri@potter.fcb",
+      "motDePasseHash": "$2a$11$kNBGeWd.hCSGyLAoJk794eBX/snchBHaHGLryU79PEpgalKB34riG",
+      "statut": "pending",
+      "role": "guest",
+      "createdAt": "2025-12-08T09:48:41.4349936Z"
+    },
+    {
+      "id": 19,
+      "nom": "Mugen",
+      "email": "mugen@samurai.shamploo",
+      "motDePasseHash": "$2a$11$D/wosiFqNFCpXXI.GVJlwexxLKImgns/nS1kZD3FCbPztFjY5Z26m",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-12-08T09:52:38.6613117Z"
+    },
+    {
+      "id": 20,
+      "nom": "Gin",
+      "email": "gin@samurai.shamploo",
+      "motDePasseHash": "$2a$11$2Q0SgG17atWuexB6RpvIdenZC07pVG21KKH9Ytcdp5gu4UVm/Pzg2",
+      "statut": "actif",
+      "role": "user",
+      "createdAt": "2025-12-08T10:11:32.9314056Z"
     }
   ],
   "clients": [
@@ -100,9 +208,9 @@
       "numeroTel": 657575757
     },
     {
-      "id": 9,
-      "nom": "Robert",
-      "numeroTel": 691919191
+      "id": 6,
+      "nom": "Kendrick Lamar",
+      "numeroTel": 652525252
     }
   ],
   "products": [

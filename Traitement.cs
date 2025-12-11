@@ -22,7 +22,7 @@ namespace App1
         public static int CalculID(Donnees donnees)
         {
             int max = 0;
-            foreach (var u in donnees.users)
+            foreach (var u in donnees.clients)
             {
                 if (u.id > max) max = u.id;
             }
@@ -146,6 +146,13 @@ namespace App1
                     Console.Write("*");
                 }
             }
+        }
+
+        public void Afficher(string msg)
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(msg);
+            Console.ForegroundColor = ConsoleColor.White;
         }
 
     }

@@ -136,7 +136,7 @@ namespace App1.Services
         }
 
         //Creation d'un utilsateur (En prenant la restriction de l'admin)
-        public bool CreerUtilisateurAuth(string requestEmail, string requestMdp, string nom, string email, string mdp, string role = "user")
+        public bool CreerUtilisateurAuth(string requestEmail, string requestMdp, string? nom, string? email, string? mdp, string? role = "user")
         {
             UserServices service = new UserServices();
             var req = Authentifier(requestEmail, requestMdp);
@@ -165,7 +165,7 @@ namespace App1.Services
 
             var donnees = DataStore.Lire();
 
-            User? cible = Traitement.RechercheUser(donnees, cEmail); ;
+            User? cible = Traitement.RechercheUser(donnees, cEmail);
             /*foreach (var u in donnees.users)
             {
                 if (!string.IsNullOrEmpty(u.email) && string.Equals(u.email.Trim(), cEmail.Trim(), StringComparison.OrdinalIgnoreCase))
