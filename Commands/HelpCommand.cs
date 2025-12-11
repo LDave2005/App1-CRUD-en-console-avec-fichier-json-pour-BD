@@ -20,6 +20,7 @@ namespace App1.Commands
                 Console.WriteLine("Commandes disponibles :");
                 foreach (var command in allCommand.Values)
                     op.Afficher($"- {command.Name}");
+                op.Afficher("- clear : Nettoyer la console");
                 op.Afficher("- exit : Pour fermer l'application");
                 Console.WriteLine("\nEntrer help <commande> pour voir les sous commandes");
                 return;

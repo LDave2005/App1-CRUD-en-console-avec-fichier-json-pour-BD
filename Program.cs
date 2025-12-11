@@ -29,6 +29,7 @@ public class jsonCrud
 
             if (input == "exit") break;
             parser2.ProcessInput(input);
+            if(input == "clear") Console.Clear();
 
         }
     }
