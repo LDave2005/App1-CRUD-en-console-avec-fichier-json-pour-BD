@@ -13,11 +13,11 @@ namespace App1.Commands.ProductCommand
         public string Name => "modify";
         public List<Parametre> parametres { get; } = new List<Parametre>
         {
-            new Parametre("id"),
-            new Parametre("n"),
-            new Parametre("d"),
-            new Parametre("p"),
-            new Parametre("qte"),
+            new Parametre("id","Identitfiant du produit a modifier"),
+            new Parametre("n","Nouveau nom du produit"),
+            new Parametre("d","Nouvelle description"),
+            new Parametre("p","Nouveau Prix"),
+            new Parametre("qte","Nouvelle quantite"),
         };
         public void Execute(Dictionary<string, string> args)
         {

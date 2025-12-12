@@ -13,8 +13,8 @@ namespace App1.Commands.ClientCommand
         public string Name => "create";
         public List<Parametre> parametres { get; } = new List<Parametre>
         {
-            new Parametre("n"),
-            new Parametre("t"),
+            new Parametre("n","Nom du Client"),
+            new Parametre("t", "Numero de telephone"),
         };
 
         public void Execute(Dictionary<string, string> args)

@@ -9,9 +9,9 @@ namespace App1.Commands.UserCommand
 
         public List<Parametre> parametres { get; } = new List<Parametre>
         {
-            new Parametre("email"),
-            new Parametre("pwd"),
-            new Parametre("target"),
+            new Parametre("email","Email de l'utilisateur initiateur de la desactivation"),
+            new Parametre("pwd","Mot de passe de l'utilisateur initiateur de la desactivation"),
+            new Parametre("target","Email de l'utilisateur cible"),
         };
 
         public void Execute(Dictionary<string, string> args)

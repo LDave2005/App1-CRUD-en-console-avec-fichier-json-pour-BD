@@ -13,7 +13,7 @@ namespace App1.Commands.ProductCommand
         public string Name => "delete";
         public List<Parametre> parametres { get; } = new List<Parametre>
         {
-            new Parametre("id"),
+            new Parametre("id","Identifiant du produit a supprimer"),
         };
         public void Execute(Dictionary<string, string> args)
         {

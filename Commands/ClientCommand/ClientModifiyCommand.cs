@@ -13,9 +13,9 @@ namespace App1.Commands.ClientCommand
         public string Name => "modify";
         public List<Parametre> parametres { get; } = new List<Parametre>
         {
-            new Parametre("id"),
-            new Parametre("n"),
-            new Parametre("t"),
+            new Parametre("id","Identifiant du client"),
+            new Parametre("n", "Nouveau Nom"),
+            new Parametre("t", "Nouveau de telephone"),
         };
         public void Execute(Dictionary<string,string> args)
         {

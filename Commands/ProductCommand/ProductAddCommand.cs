@@ -14,10 +14,10 @@ namespace App1.Commands.ProductCommand
         public string Name => "create";
         public List<Parametre> parametres { get; } = new List<Parametre>
         {
-            new Parametre("n"),
-            new Parametre("d"),
-            new Parametre("p"),
-            new Parametre("qte"),
+            new Parametre("n","Nom du produit"),
+            new Parametre("d","Description du produit"),
+            new Parametre("p","Prix du produit"),
+            new Parametre("qte","Quantite du produit"),
         };
 
         public void Execute(Dictionary<string, string> args)

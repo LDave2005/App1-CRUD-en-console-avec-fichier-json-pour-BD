@@ -14,8 +14,8 @@ namespace App1.Commands.UserCommand
         public string Name => "connect";
         public List<Parametre> Parametres { get; } = new List<Parametre>
         {
-            new Parametre("e"),
-            new Parametre("p"),
+            new Parametre("e","Email de l'utilisateur"),
+            new Parametre("p","Mot de passe de l'utilisateur"),
         };
         public List<Parametre> parametres => throw new NotImplementedException();
         public void Execute(Dictionary<string, string> args)

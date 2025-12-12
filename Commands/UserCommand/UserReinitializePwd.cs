@@ -15,10 +15,10 @@ namespace App1.Commands.UserCommand
 
         public List<Parametre> parametres { get; } = new List<Parametre>
         { 
-            new Parametre("email"),
-            new Parametre("pwd"),
-            new Parametre("targetE"),
-            new Parametre("npwd"),
+            new Parametre("email","Email du demandeur"),
+            new Parametre("pwd","Mot du demandeur"),
+            new Parametre("targetE","Email de la cible"),
+            new Parametre("npwd","Mot de passe de la cible"),
         };
 
         public void Execute(Dictionary<string, string> args)

@@ -8,7 +8,7 @@ namespace App1.Commands.ClientCommand
         public string Name => "delete";
         public List<Parametre> parametres { get; } = new List<Parametre>
         {
-            new Parametre("id"),
+            new Parametre("id","Identifiant du client a supprimer"),
         };
         public void Execute(Dictionary<string, string> args)
         {
