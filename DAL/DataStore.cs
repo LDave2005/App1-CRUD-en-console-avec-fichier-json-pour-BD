@@ -10,7 +10,8 @@ namespace App1.DAL
 {
     public class DataStore
     {
-        private static string chemin = "E:\\Cours de Developpement C#\\CRUD\\Console\\App1\\data.json";
+        //private static string chemin = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data.json");
+        private static string chemin = "data.json";
 
         public static Donnees Lire()
         {
